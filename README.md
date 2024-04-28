@@ -7,24 +7,25 @@ A sophisticated culinary marketplace where vendors showcase and sell their delec
 
 To run this project, you will need to add the following environment variables to your .env file in your backend folder.
 
-`MYSQL_PASSWORD` : Enter your mysql password
+`MYSQL_PASSWORD`: Enter your MySQL password
 
-`STRIPE_PUBLIC_KEY` : Get your stripe public key from Stripe
+`STRIPE_PUBLIC_KEY`: Get your stripe public key from Stripe
 
-`STRIPE_PRIVATE_KEY` : Get your stripe public key from Stripe
+`STRIPE_PRIVATE_KEY`: Get your stripe public key from Stripe
 
-`SECRET` : Type any random string of characters
+`SECRET`: Type any random string of characters for JWT
 
 
 ## Pre-requisites
 
-Create a database named **food_ordering_site** in your mysql. Create an account in Stripe.
+Create a database named **food_ordering_site** in your MySQL. Create an account in Stripe for payments.
+
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone [https://link-to-project](https://github.com/Code-Challengers-hacks/Hungry.git)
 ```
 
 Go to the project directory
@@ -66,12 +67,12 @@ Start the frontend
 Your site will be running in **localhost:3000** and server in **localhost:4000**
 ## Features
 
-- Secure encrypted authentication.
-- Sellers can add / modify price / delete their menu items.
-- Sellers can see the feedbacks and orders given to them.
-- Users can add / modify quantity / delete their orders and carts.
-- Users can give feedbacks to the sellers and able to see thir past orders.
-- Users will be able to pay using stripe payment.
+- Robust and encrypted authentication ensures secure access.
+- Sellers can add, modify prices, or remove items from their menu.
+- Sellers can conveniently view feedback and order details provided by customers.
+- Users can add, adjust quantities, or remove items from their orders and shopping carts.
+- Users can provide feedback to sellers and access their order history.
+- Users can make payments seamlessly through the Stripe payment gateway.
 
 
 ## Tech Stack
@@ -81,23 +82,4 @@ Your site will be running in **localhost:3000** and server in **localhost:4000**
 **Server:** Node, Express, Sequelize ORM
 
 **Database:** MySQL
-
-
-## Deployment
-
-To deploy this project run
-
-```bash
-  npm run buid
-  npm run start
-```
-
-
-## Running Tests
-
-To run tests, run the following command
-
-```bash
-  npm run lint
-```
 
