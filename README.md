@@ -7,7 +7,9 @@ A sophisticated culinary marketplace where vendors showcase and sell their delec
 
 To run this project, you will need to add the following environment variables to your .env file in your backend folder.
 
-`MYSQL_PASSWORD`: Enter your MySQL password
+`MYSQL_USERNAME` : Enter your mysql username
+
+`MYSQL_PASSWORD` : Enter your mysql password
 
 `STRIPE_PUBLIC_KEY`: Get your stripe public key from Stripe
 

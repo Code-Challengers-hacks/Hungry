@@ -2,7 +2,7 @@ const { DataTypes, Sequelize } = require('sequelize')
 
 const sequelize = new Sequelize({
     dialect: 'mysql',
-    username: 'root',
+    username: process.env.MYSQL_USERNAME,
     password: process.env.MYSQL_PASSWORD,
     database: 'food_ordering_system',
     host: 'localhost'
