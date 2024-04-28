@@ -25,7 +25,7 @@ Create a database named **food_ordering_site** in your MySQL. Create an account 
 Clone the project
 
 ```bash
-  git clone [https://link-to-project](https://github.com/Code-Challengers-hacks/Hungry.git)
+  git clone https://github.com/Code-Challengers-hacks/Hungry.git
 ```
 
 Go to the project directory
