@@ -28,22 +28,16 @@ Clone the project
   git clone https://github.com/Code-Challengers-hacks/Hungry.git
 ```
 
-Go to the project directory
+Go to the backend directory
 
 ```bash
-  cd FoodOrderingApp
+  cd backend
 ```
 
 Install dependencies
 
 ```bash
   npm install
-```
-
-Go to the backend directory
-
-```bash
-  cd backend
 ```
 
 Start the server
@@ -56,6 +50,12 @@ Go to the frontend directory
 
 ```bash
   cd frontend
+```
+
+Install dependencies
+
+```bash
+  npm install
 ```
 
 Start the frontend
