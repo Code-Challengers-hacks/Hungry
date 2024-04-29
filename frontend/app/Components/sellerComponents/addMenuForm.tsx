@@ -8,8 +8,19 @@ import {
   Textarea,
   TextInput,
 } from "@mantine/core";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Bounce, toast } from "react-toastify";
+import Image_Placeholder from "@/public/food_placeholder.jpg";
+
+async function urlToBlob(url: string): Promise<Blob> {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  const blob = await response.blob();
+  return blob;
+}
+
 
 type Props =  {
   close : () => void;
@@ -19,7 +30,7 @@ const AddMenuForm = (props : Props) => {
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [price, setPrice] = useState<number>(1);
-  const [image, setImage] = useState<File | null>(null);
+  const [image, setImage] = useState<File | Blob | string | null>('');
   const seller: localStore = JSON.parse(localStorage.getItem("Auth") || "");
   const sellerName = seller.name;
   const sellerMail = seller.email;
@@ -27,6 +38,12 @@ const AddMenuForm = (props : Props) => {
   const [descriptionError, setDescriptionError] = useState("");
   const [priceError, setPriceError] = useState("");
   const { dispatch } = useContext(MenuContext) || {};
+
+  useEffect(() => {
+    urlToBlob(Image_Placeholder.src)
+      .then(blob => setImage(blob))
+      .catch(error => console.error('Error:', error));
+  }, []);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -41,6 +58,7 @@ const AddMenuForm = (props : Props) => {
       setPriceError("Price of food must be above ₹1!");
     }
     try {
+      
       const formData = new FormData();
       formData.append("name", name);
       formData.append("description", description);

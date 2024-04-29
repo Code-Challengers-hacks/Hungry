@@ -34,9 +34,8 @@ router.post('/menu', upload.single("image"), async (req, res) => {
   try {
     const { name, price, description, sellerName } = req.body;
     const imgSrc = req.file.filename;
-    console.log(imgSrc)
+    console.log("imageSrc : " + imgSrc)
     const initial = await MenuItem.findOne({ where: { name: name, sellerName: sellerName , description : description} })
-    console.log(initial)
     if (initial == null) {
       const newMenuItem = await MenuItem.create({ name, price, description, image : imgSrc, sellerName });
       res.status(201).json(newMenuItem);
