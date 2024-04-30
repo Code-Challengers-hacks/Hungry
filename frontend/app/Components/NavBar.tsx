@@ -37,7 +37,7 @@ export const NavBar = () => {
       >
         HUNGRY
       </Link>
-      {member  ? <Button variant="outline" color="red" size="md" radius="lg" className="flex justify-center ml-36 align-middle content-center w-1/3" onClick={handleLogout} >
+      {member  ? <Button variant="outline" color="red" size="md" radius="lg" className="flex justify-center ml-36 align-middle content-center " onClick={handleLogout} >
         Logout
       </Button> : ""}
     </div>

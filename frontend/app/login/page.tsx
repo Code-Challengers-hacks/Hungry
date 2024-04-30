@@ -3,7 +3,7 @@
 import { Button, Group, PasswordInput, Radio } from "@mantine/core";
 import { Input } from "@mantine/core";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavBar } from "../Components/NavBar";
 import "./styles.css";
 import { AuthContext } from "../Context/authContext";
@@ -25,6 +25,19 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const { dispatch } = useContext(AuthContext) || {};
+
+    useEffect(() => {
+      const  data = JSON.parse(localStorage.getItem('Auth') as string) 
+  
+      if (data) {
+        console.log(data);
+          dispatch ? dispatch({ type: 'LOGIN', payload: { name : data.name, mode : data.mode } }) : {}
+          if(data.mode == "User")
+              router.push(`/user/${data.name}`)
+          else if(data.mode == "Seller")
+              router.push(`/seller/${data.name}`)
+      }
+  }, [])
 
   const handleLogin = () => {
     setLoading(true);

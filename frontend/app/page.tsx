@@ -13,20 +13,6 @@ import DescTyper from "./Components/descTyper";
 
 
 export default function Home() {  
-  const { dispatch } = useContext(AuthContext) || {};
-  const router = useRouter();
-
-    useEffect(() => {
-      const  data = JSON.parse(localStorage.getItem('Auth') as string) 
-  
-      if (data) {
-          dispatch ? dispatch({ type: 'LOGIN', payload: { name : data.name, mode : data.mode } }) : {}
-          if(data.mode === "user")
-              router.push(`/user/${data.name}`)
-          else if(data.mode === "seller")
-              router.push(`/seller/${data.name}`)
-      }
-  }, [])
 
   return (
     <div className= "w-full h-screen backgorund">
