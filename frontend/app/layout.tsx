@@ -8,6 +8,7 @@ import { FeedbackContextProvider } from "./Context/feedbackContext";
 import { CartsContextProvider } from "./Context/cartContext";
 import { OrderedContextProvider } from "./Context/orderedContext";
 import { SellerOrdersContextProvider } from "./Context/sellerOrderContext";
+import {ParticleBackground }from "../public/particleBg";
 export const metadata: Metadata = {
   title: "Hungry",
   description: "Hungry : Food ordering app",
@@ -28,6 +29,7 @@ export default function RootLayout({
                 <FeedbackContextProvider>
                   <OrderedContextProvider>
                     <SellerOrdersContextProvider>
+                      <ParticleBackground />
                       {children}
                     </SellerOrdersContextProvider>
                   </OrderedContextProvider>

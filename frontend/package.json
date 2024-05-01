@@ -27,6 +27,8 @@
     "@tiptap/extension-link": "^2.2.6",
     "@tiptap/react": "^2.2.6",
     "@tiptap/starter-kit": "^2.2.6",
+    "@tsparticles/engine": "^3.3.0",
+    "@tsparticles/react": "^3.0.0",
     "body-parser": "^1.20.2",
     "dayjs": "^1.11.10",
     "embla-carousel-react": "^8.0.1",
@@ -40,6 +42,7 @@
     "recharts": "^2.12.4",
     "sharp": "^0.33.3",
     "textillate": "^0.4.1",
+    "tsparticles": "^3.3.0",
     "typed.js": "^2.1.0",
     "validator": "^13.11.0"
   },
