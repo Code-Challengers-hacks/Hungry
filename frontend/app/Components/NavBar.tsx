@@ -1,15 +1,21 @@
 import Link from "next/link";
 import "./styles.css";
-import { Button } from "@mantine/core";
+import { Button, Tooltip } from "@mantine/core";
 import { AuthContext } from "../Context/authContext";
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
 import { Bounce, toast } from "react-toastify";
+import Image from "next/image";
+import Help from '@/public/question.png'
 
 export const NavBar = () => {
   const member: boolean = localStorage.getItem("Auth") !== null;
   const { dispatch} = useContext(AuthContext) || {}
   const router = useRouter();
+
+  const handleHelp = () => {
+    window.open('https://drive.google.com/drive/folders/1XzoNtOlFF6ESCdN87TBNVsrrZx70qLQw?usp=sharing', "_blank");
+  }
 
   const handleLogout = async () => {
     router.push('/login');
@@ -40,6 +46,7 @@ export const NavBar = () => {
       {member  ? <Button variant="outline" color="red" size="md" radius="lg" className="flex justify-center ml-36 align-middle content-center " onClick={handleLogout} >
         Logout
       </Button> : ""}
+      <Tooltip label='Help' position="bottom"><Image src={Help} alt='Help' width={50} height={50} className="absolute right-5 cursor-pointer" onClick={handleHelp} /></Tooltip>
     </div>
   );
 };
