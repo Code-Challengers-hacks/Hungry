@@ -66,7 +66,7 @@ export const ParticleBackground = () => {
           color: "#ffffff",
           distance: 100,
           enable: true,
-          opacity: 0.35,
+          opacity: 0.10,
           width: 1,
         },
         move: {
@@ -83,13 +83,14 @@ export const ParticleBackground = () => {
           density: {
             enable: true,
           },
-          value: 300,
+          value: 500,
         },
         opacity: {
-          value: 0.1,
+          value: 0.05,
         },
         shape: {
           type: "circle",
+         
           image: {
             src: './strawberry.png',
             width: 160,
@@ -97,7 +98,7 @@ export const ParticleBackground = () => {
           }
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 5, max: 7 },
         },
       },
       detectRetina: true,
